@@ -1,2 +1,4 @@
 # Windows
-🥹 Windows 공부를 하게 될 줄이야... 🥹
+## Week1 (25.03.24 ~ 03.30)
+- PowerShell 기초 이해하기
+- AD 이해하기
