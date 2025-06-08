@@ -1,0 +1,31 @@
+윈도우 스케줄러
+
+1. Powershell 파일 준비
+: 잘 작동하는지 확인
+
+2. Powershell 경로 확인
+
+3. 작업 스케줄러 실행
+
+4. 등록
+- 작업 만들기 (Create Task)
+- 일반 탭
+    이름: 원하는 이름 입력
+    가장 높은 권한으로 실행 체크 (관리자 권한으로 실행)
+    구성 대상: Win10 선택
+- 트리거 탭 (새로 만들기)
+    매일/매주 등 원하는 주기 설정
+- 동작 탭 (새로 만들기)
+    작업 시작: 프로그램 시작
+- 프로그램/스크립트
+- 인수 추가: -ExecutionPolicy Bypass -File "C:\Scripts\MyScript.ps1"
+
+
+# 로그 시작
+"$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss'): Script Started" | Out-File "C:\Scripts\log.txt" -Append
+
+# 실제 작업 로직
+Write-Output "작업 실행 중입니다..."
+
+# 작업 완료 로그
+"$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss'): Script Finished" | Out-File "C:\Scripts\log.txt" -Append
